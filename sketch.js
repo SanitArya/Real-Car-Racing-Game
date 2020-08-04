@@ -39,7 +39,7 @@ function preload(){
 function draw(){
     background("#c68767");
 
-    image(track,0,-displayHeight*4,displayWidth,displayHeight*5);
+    
 
 
     if(playerCount==4){
