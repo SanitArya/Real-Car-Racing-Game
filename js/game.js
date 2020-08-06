@@ -60,6 +60,8 @@ class Game{
         text("GameStart",120,100);
         Player.getPlrInfo();
 
+        player.getCarsAtEnd();
+
         if(allPlayers != undefined){
 
             background(198,135,103)
@@ -87,9 +89,7 @@ class Game{
                 camera.position.y = carArray[index-1].y;
                 }
 
-                //displayPos = displayPos+20;
-
-               // text(allPlayers[plr].name + ": " + allPlayers[plr].distance, 120,displayPos)
+                
             }
         }
 
@@ -106,8 +106,15 @@ class Game{
 
             database.ref("/").update({
 
-            gameState:2
+            gameState:2,
+            carAtEnd: rank
+            
             })
+
+            
+           player.rank +=1;
+
+            Player.updateCarAtEnd(player.rank)
         }
 
         drawSprites();
@@ -115,7 +122,7 @@ class Game{
 
     end(){
 
-    console.log("Game Over")
+    console.log(player.rank)
         
     }
 }

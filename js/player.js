@@ -5,6 +5,8 @@ class Player{
         this.name = "";
         this.playerCount = null;
         this.distance = 0;
+
+        this.rank = null;
           
     }
 
@@ -43,5 +45,25 @@ class Player{
        Plr.on("value",(data)=>{
         allPlayers = data.val();
        })
+    }
+
+    getCarsAtEnd(){
+
+       database.ref("carAtEnd").on("value",(data)=>{
+        
+
+            this.rank = data.val();
+        })
+    }
+
+    static updateCarAtEnd(rank){
+
+        database.ref("/").update({
+            
+            carAtEnd:rank
+        })
+
+
+        
     }
 }

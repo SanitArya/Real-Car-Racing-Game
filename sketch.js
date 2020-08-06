@@ -10,6 +10,9 @@ var playerCount,form,player,game;
 var car1,car2,car3,car4;
 var carArray;
 
+var rank;
+
+
 function setup(){
     createCanvas(displayWidth-20,displayHeight-30);
 
@@ -20,7 +23,7 @@ function setup(){
     game.getState();
     game.startFunction();
 
-    
+    rank = 0;
 
 
 }
