@@ -102,7 +102,7 @@ class Game{
             console.log(player.distance)
         }
 
-        if(player.distance>3000){
+        if(player.distance>-3000){
 
             database.ref("/").update({
 
